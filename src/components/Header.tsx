@@ -29,31 +29,30 @@ const Header = () => {
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'py-3 bg-[var(--color-bg-primary)]/80 backdrop-blur-md border-b border-[var(--color-border-main)]' 
-          : 'py-5 bg-transparent border-transparent'
+          ? 'py-4 bg-[var(--color-bg-base)]/80 backdrop-blur-xl shadow-[var(--shadow-neo-sm)]' 
+          : 'py-6 bg-transparent'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <Link to="/" className="text-2xl font-bold font-['Fraunces'] tracking-tight group">
-          TLDR<span className="text-[var(--color-text-secondary)]">MONEY</span>
-          <motion.div 
-            className="h-0.5 bg-[var(--color-accent)] w-0 group-hover:w-full transition-all duration-300 mt-0.5" 
-          />
+        <Link 
+          to="/" 
+          className="text-2xl font-bold font-display tracking-tight text-[var(--color-fg-primary)] hover:text-[var(--color-accent)] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-2 focus:ring-offset-[var(--color-bg-base)] rounded-xl px-2 py-1 -ml-2"
+        >
+          TLDR<span className="text-[var(--color-fg-muted)]">MONEY</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-8">
+        <nav className="hidden lg:flex items-center space-x-6">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
               to={link.path}
-              className="text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors relative group"
+              className="px-4 py-2 text-sm font-medium text-[var(--color-fg-muted)] rounded-2xl hover:text-[var(--color-accent)] hover:shadow-[var(--shadow-neo-hover)] hover:-translate-y-[1px] transition-all duration-300 active:shadow-[var(--shadow-neo-inset-sm)] active:translate-y-[0.5px] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-2 focus:ring-offset-[var(--color-bg-base)]"
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[var(--color-accent)] transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </nav>
@@ -61,16 +60,16 @@ const Header = () => {
         <div className="hidden lg:flex items-center space-x-6">
           {/* Search */}
           <div className="relative group">
-            <div className={`flex items-center border rounded-full px-4 py-1.5 transition-all duration-300 ${
+            <div className={`flex items-center rounded-2xl px-4 py-2.5 transition-all duration-300 ${
               isSearchFocused 
-                ? 'border-[var(--color-accent)] bg-white ring-2 ring-[var(--color-accent)]/20 shadow-sm' 
-                : 'border-[var(--color-border-main)] bg-[var(--color-bg-secondary)] hover:border-[var(--color-text-tertiary)]'
+                ? 'shadow-[var(--shadow-neo-inset-deep)] ring-2 ring-[var(--color-accent)] ring-offset-2 ring-offset-[var(--color-bg-base)] bg-[var(--color-bg-base)]' 
+                : 'shadow-[var(--shadow-neo-inset)] bg-[var(--color-bg-base)] hover:shadow-[var(--shadow-neo-inset-deep)]'
             }`}>
-              <Search className={`w-4 h-4 mr-2 transition-colors ${isSearchFocused ? 'text-[var(--color-accent)]' : 'text-[var(--color-text-tertiary)]'}`} />
+              <Search className={`w-4 h-4 mr-3 transition-colors duration-300 ${isSearchFocused ? 'text-[var(--color-accent)]' : 'text-[var(--color-fg-muted)]'}`} />
               <input 
                 type="text" 
                 placeholder="Search..." 
-                className="bg-transparent border-none outline-none text-sm w-32 focus:w-48 transition-all duration-300 text-[var(--color-text-primary)] placeholder-[var(--color-text-tertiary)]"
+                className="bg-transparent border-none outline-none text-sm w-32 focus:w-48 transition-all duration-300 text-[var(--color-fg-primary)] placeholder-[var(--color-fg-muted)]"
                 onFocus={() => setIsSearchFocused(true)}
                 onBlur={() => setIsSearchFocused(false)}
               />
@@ -79,7 +78,7 @@ const Header = () => {
 
           <Link 
             to="/#waitlist" 
-            className="px-5 py-2 bg-[var(--color-text-primary)] text-[var(--color-bg-primary)] rounded-full text-sm font-medium hover:bg-[var(--color-accent)] hover:text-white transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+            className="px-6 py-3 bg-[var(--color-accent)] text-white rounded-2xl text-sm font-medium shadow-[var(--shadow-neo-base)] hover:shadow-[var(--shadow-neo-hover)] hover:-translate-y-[1px] hover:bg-[var(--color-accent-light)] transition-all duration-300 active:shadow-[var(--shadow-neo-inset)] active:translate-y-[0.5px] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-2 focus:ring-offset-[var(--color-bg-base)]"
           >
             Join waitlist
           </Link>
@@ -87,11 +86,11 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button 
-          className="lg:hidden p-2 text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors"
+          className="lg:hidden p-3 rounded-2xl text-[var(--color-fg-primary)] shadow-[var(--shadow-neo-base)] hover:shadow-[var(--shadow-neo-hover)] hover:-translate-y-[1px] hover:text-[var(--color-accent)] active:shadow-[var(--shadow-neo-inset)] active:translate-y-[0.5px] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-2 focus:ring-offset-[var(--color-bg-base)]"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
@@ -102,34 +101,36 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-[var(--color-bg-primary)] border-b border-[var(--color-border-main)] overflow-hidden"
+            className="lg:hidden bg-[var(--color-bg-base)] overflow-hidden shadow-[var(--shadow-neo-base)] mt-2 mx-4 rounded-[32px]"
           >
-            <div className="container mx-auto px-6 py-6 flex flex-col space-y-4">
-              <div className="relative mb-4">
-                <div className="flex items-center border border-[var(--color-accent)] rounded-full px-4 py-2 bg-white">
+            <div className="px-6 py-8 flex flex-col space-y-6">
+              <div className="relative">
+                <div className="flex items-center shadow-[var(--shadow-neo-inset-deep)] rounded-2xl px-5 py-3 bg-[var(--color-bg-base)] focus-within:ring-2 focus-within:ring-[var(--color-accent)] focus-within:ring-offset-2 focus-within:ring-offset-[var(--color-bg-base)]">
                   <Search className="w-5 h-5 mr-3 text-[var(--color-accent)]" />
                   <input 
                     type="text" 
                     placeholder="Search TLDR Money..." 
-                    className="bg-transparent border-none outline-none text-base w-full text-[var(--color-text-primary)]"
+                    className="bg-transparent border-none outline-none text-base w-full text-[var(--color-fg-primary)]"
                   />
                 </div>
               </div>
               
-              {navLinks.map((link) => (
-                <Link 
-                  key={link.name} 
-                  to={link.path}
-                  className="text-lg font-medium text-[var(--color-text-secondary)] py-2 border-b border-[var(--color-border-main)]/50 hover:text-[var(--color-accent)] hover:pl-2 transition-all"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              ))}
+              <div className="flex flex-col space-y-3">
+                {navLinks.map((link) => (
+                  <Link 
+                    key={link.name} 
+                    to={link.path}
+                    className="text-lg font-medium text-[var(--color-fg-muted)] py-3 px-5 rounded-2xl shadow-[var(--shadow-neo-base)] hover:text-[var(--color-accent)] hover:shadow-[var(--shadow-neo-inset)] active:shadow-[var(--shadow-neo-inset-deep)] transition-all duration-300"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
               
               <Link 
                 to="/#waitlist" 
-                className="mt-4 px-6 py-3 bg-[var(--color-text-primary)] text-[var(--color-bg-primary)] rounded-full text-center font-medium active:bg-[var(--color-accent)] active:text-white transition-colors"
+                className="mt-6 px-6 py-4 bg-[var(--color-accent)] text-white rounded-2xl text-center font-medium shadow-[var(--shadow-neo-base)] hover:shadow-[var(--shadow-neo-hover)] active:shadow-[var(--shadow-neo-inset)] transition-all duration-300"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Join the waitlist

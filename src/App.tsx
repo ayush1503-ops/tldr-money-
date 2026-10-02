@@ -7,15 +7,14 @@ import ThreeBackground from './components/ThreeBackground';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-[var(--color-bg-primary)] text-[var(--color-text-primary)] font-sans relative selection:bg-[var(--color-accent)] selection:text-white">
+      <div className="min-h-screen bg-[var(--color-bg-base)] text-[var(--color-fg-primary)] relative selection:bg-[var(--color-accent)] selection:text-white scroll-smooth">
         <ThreeBackground />
         
         <div className="relative z-10 flex flex-col min-h-screen">
           <Header />
-          <main className="flex-grow">
+          <main className="flex-grow pt-24 md:pt-32">
             <Routes>
               <Route path="/" element={<Home />} />
-              {/* Other routes would go here but we're focusing on the homepage for now */}
               <Route path="*" element={<Home />} />
             </Routes>
           </main>

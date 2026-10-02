@@ -1,35 +1,51 @@
 @import "tailwindcss";
 
 @theme {
-  --font-fraunces: 'Fraunces', serif;
-  --font-hanken: 'Hanken Grotesk', sans-serif;
-  --font-times: 'Times New Roman', serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
 
-  --color-bg-primary: #F3EEE4;
-  --color-bg-secondary: #FBF8F2;
-  --color-bg-white: #FFFFFF;
+  --color-bg-base: #E0E5EC;
   
-  --color-text-primary: #201E1A;
-  --color-text-secondary: #524D44;
-  --color-text-tertiary: #726B5B;
+  --color-fg-primary: #3D4852;
+  --color-fg-muted: #6B7280;
   
-  --color-accent: #C65D3C;
-  --color-secondary-1: #8FAAA4;
-  --color-secondary-2: #C4D5D0;
+  --color-accent: #6C63FF;
+  --color-accent-light: #8B84FF;
+  --color-success: #38B2AC;
+
+  /* Neumorphic Shadows */
+  --shadow-neo-base: 9px 9px 16px rgba(163,177,198,0.6), -9px -9px 16px rgba(255,255,255,0.5);
+  --shadow-neo-hover: 12px 12px 20px rgba(163,177,198,0.7), -12px -12px 20px rgba(255,255,255,0.6);
+  --shadow-neo-sm: 5px 5px 10px rgba(163,177,198,0.6), -5px -5px 10px rgba(255,255,255,0.5);
   
-  --color-border-main: #E1DACB;
+  --shadow-neo-inset: inset 6px 6px 10px rgba(163,177,198,0.6), inset -6px -6px 10px rgba(255,255,255,0.5);
+  --shadow-neo-inset-deep: inset 10px 10px 20px rgba(163,177,198,0.7), inset -10px -10px 20px rgba(255,255,255,0.6);
+  --shadow-neo-inset-sm: inset 3px 3px 6px rgba(163,177,198,0.6), inset -3px -3px 6px rgba(255,255,255,0.5);
 }
 
 @layer base {
   body {
-    background-color: var(--color-bg-primary);
-    color: var(--color-text-primary);
-    font-family: var(--font-hanken);
+    background-color: var(--color-bg-base);
+    color: var(--color-fg-primary);
+    font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-fraunces);
+    font-family: var(--font-display);
+    color: var(--color-fg-primary);
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
   }
 }

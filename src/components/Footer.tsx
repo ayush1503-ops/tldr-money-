@@ -24,30 +24,29 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[var(--color-bg-primary)] border-t border-[var(--color-border-main)] pt-20 pb-10">
+    <footer className="bg-[var(--color-bg-base)] pt-20 pb-10 mt-20 rounded-t-[32px] shadow-[var(--shadow-neo-base)]">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-2">
-            <Link to="/" className="inline-block text-2xl font-bold font-['Fraunces'] tracking-tight mb-6">
-              TLDR<span className="text-[var(--color-text-secondary)]">MONEY</span>
+            <Link to="/" className="inline-block text-2xl font-bold font-display tracking-tight text-[var(--color-fg-primary)] hover:text-[var(--color-accent)] transition-colors duration-300 px-4 py-2 rounded-2xl shadow-[var(--shadow-neo-base)] hover:shadow-[var(--shadow-neo-hover)] active:shadow-[var(--shadow-neo-inset)] -ml-4 mb-8">
+              TLDR<span className="text-[var(--color-fg-muted)]">MONEY</span>
             </Link>
-            <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed max-w-md">
+            <p className="text-[var(--color-fg-muted)] text-lg leading-relaxed max-w-md">
               Start understanding your money. Funded by subscription when it arrives — no ads, no referrals, no commissions. Nothing is charged today.
             </p>
             <div className="mt-8">
-              <a href="mailto:hello@tldrmoney.in" className="text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors font-medium relative group inline-block">
+              <a href="mailto:hello@tldrmoney.in" className="inline-flex items-center px-6 py-3 bg-[var(--color-bg-base)] text-[var(--color-fg-primary)] hover:text-[var(--color-accent)] rounded-2xl shadow-[var(--shadow-neo-base)] hover:shadow-[var(--shadow-neo-hover)] active:shadow-[var(--shadow-neo-inset)] transition-all duration-300 font-medium">
                 hello@tldrmoney.in
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[var(--color-accent)] transition-all duration-300 group-hover:w-full" />
               </a>
             </div>
           </div>
           
           <div>
-            <h3 className="font-['Fraunces'] text-lg mb-6">Navigation</h3>
+            <h3 className="font-display font-bold text-xl mb-6">Navigation</h3>
             <ul className="space-y-4">
               {footerLinks.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.path} className="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:translate-x-1 inline-block transition-transform duration-300">
+                  <Link to={link.path} className="text-[var(--color-fg-muted)] hover:text-[var(--color-accent)] hover:translate-x-1 inline-block transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] rounded px-1 -ml-1">
                     {link.name}
                   </Link>
                 </li>
@@ -56,11 +55,11 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-['Fraunces'] text-lg mb-6">Socials</h3>
+            <h3 className="font-display font-bold text-xl mb-6">Socials</h3>
             <ul className="space-y-4">
               {socialLinks.map((link) => (
                 <li key={link.name}>
-                  <a href={link.path} target="_blank" rel="noopener noreferrer" className="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:translate-x-1 inline-block transition-transform duration-300">
+                  <a href={link.path} target="_blank" rel="noopener noreferrer" className="text-[var(--color-fg-muted)] hover:text-[var(--color-accent)] hover:translate-x-1 inline-block transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] rounded px-1 -ml-1">
                     {link.name}
                   </a>
                 </li>
@@ -69,13 +68,13 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="pt-8 border-t border-[var(--color-border-main)] flex flex-col md:flex-row items-center justify-between">
-          <p className="text-[var(--color-text-tertiary)] text-sm mb-4 md:mb-0">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between shadow-[var(--shadow-neo-inset-sm)] rounded-2xl px-6 py-4 bg-[var(--color-bg-base)]">
+          <p className="text-[var(--color-fg-muted)] text-sm mb-4 md:mb-0">
             tldrmoney.in is operated by Sonal Systems Private Limited.
           </p>
           <div className="flex space-x-6">
             {legalLinks.map((link) => (
-              <Link key={link.name} to={link.path} className="text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] text-sm transition-colors">
+              <Link key={link.name} to={link.path} className="text-[var(--color-fg-muted)] hover:text-[var(--color-accent)] text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] rounded px-1 -ml-1">
                 {link.name}
               </Link>
             ))}
