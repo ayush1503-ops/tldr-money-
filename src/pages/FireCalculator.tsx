@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Flame, Calculator } from 'lucide-react';
 import { WaitlistForm } from '../components/WaitlistForm';
+import { APP_IMAGES } from '../assets/images';
 
 const currentYear = new Date().getFullYear();
 
@@ -262,7 +263,7 @@ export default function FireCalculator() {
           <div className="p-4 rounded-[36px] bg-[var(--color-bg-base)] shadow-[var(--shadow-neo-base)] border border-white/50">
             <div className="rounded-[28px] overflow-hidden shadow-[var(--shadow-neo-inset-sm)] relative">
               <img
-                src="/src/assets/images/fire_calculator_ui_1790949151843.jpg"
+                src={APP_IMAGES.fireCalculator}
                 alt="TLDR Money FIRE Freedom Calculator Interface"
                 className="w-full h-auto object-cover"
                 referrerPolicy="no-referrer"

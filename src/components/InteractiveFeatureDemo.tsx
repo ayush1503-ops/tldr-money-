@@ -12,6 +12,7 @@ import {
   Flame, 
   MousePointer
 } from 'lucide-react';
+import { APP_IMAGES } from '../assets/images';
 
 interface InteractiveFeatureDemoProps {
   demoId?: 'expenses' | 'networth' | 'fire';
@@ -316,7 +317,7 @@ export default function InteractiveFeatureDemo({ demoId = 'expenses' }: Interact
               <div className="p-4 rounded-[36px] bg-[var(--color-bg-base)] shadow-[var(--shadow-neo-base)] border border-white/50 relative overflow-hidden group">
                 <div className="rounded-[28px] overflow-hidden shadow-[var(--shadow-neo-inset-sm)] relative">
                   <img
-                    src="/src/assets/images/expense_feed_ui_1790949127767.jpg"
+                    src={APP_IMAGES.expenseFeed}
                     alt="TLDR Money Expense Tracker Interface"
                     className="w-full h-auto object-cover"
                     referrerPolicy="no-referrer"
@@ -450,7 +451,7 @@ export default function InteractiveFeatureDemo({ demoId = 'expenses' }: Interact
               <div className="p-4 rounded-[36px] bg-[var(--color-bg-base)] shadow-[var(--shadow-neo-base)] border border-white/50 relative overflow-hidden group">
                 <div className="rounded-[28px] overflow-hidden shadow-[var(--shadow-neo-inset-sm)] relative">
                   <img
-                    src="/src/assets/images/networth_breakdown_ui_1790949140162.jpg"
+                    src={APP_IMAGES.networthBreakdown}
                     alt="TLDR Money Net Worth Dashboard Interface"
                     className="w-full h-auto object-cover"
                     referrerPolicy="no-referrer"
@@ -590,7 +591,7 @@ export default function InteractiveFeatureDemo({ demoId = 'expenses' }: Interact
               <div className="p-4 rounded-[36px] bg-[var(--color-bg-base)] shadow-[var(--shadow-neo-base)] border border-white/50 relative overflow-hidden group">
                 <div className="rounded-[28px] overflow-hidden shadow-[var(--shadow-neo-inset-sm)] relative">
                   <img
-                    src="/src/assets/images/fire_calculator_ui_1790949151843.jpg"
+                    src={APP_IMAGES.fireCalculator}
                     alt="TLDR Money FIRE Freedom Calculator Interface"
                     className="w-full h-auto object-cover"
                     referrerPolicy="no-referrer"

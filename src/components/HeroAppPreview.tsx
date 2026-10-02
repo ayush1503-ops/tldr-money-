@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Shield, Zap, TrendingUp, Flame } from 'lucide-react';
+import { APP_IMAGES } from '../assets/images';
 
 export default function HeroAppPreview() {
   const [activeHighlight, setActiveHighlight] = useState<number | null>(null);
@@ -19,7 +20,7 @@ export default function HeroAppPreview() {
         {/* Screenshot canvas */}
         <div className="relative rounded-[32px] overflow-hidden shadow-[var(--shadow-neo-inset-sm)] bg-[var(--color-bg-base)]">
           <img
-            src="/src/assets/images/hero_dashboard_ui_1790949112560.jpg"
+            src={APP_IMAGES.heroDashboard}
             alt="TLDR Money App Dashboard Preview"
             className="w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-700"
             referrerPolicy="no-referrer"

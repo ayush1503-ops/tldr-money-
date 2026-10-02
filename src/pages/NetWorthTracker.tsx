@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { PieChart, TrendingUp, Landmark, ShieldCheck, ArrowUpRight, DollarSign } from 'lucide-react';
 import { WaitlistForm } from '../components/WaitlistForm';
+import { APP_IMAGES } from '../assets/images';
 
 export default function NetWorthTracker() {
   const assets = [
@@ -43,7 +44,7 @@ export default function NetWorthTracker() {
         <div className="max-w-3xl mx-auto my-10 p-4 rounded-[40px] bg-[var(--color-bg-base)] shadow-[var(--shadow-neo-base)] border border-white/50">
           <div className="rounded-[30px] overflow-hidden shadow-[var(--shadow-neo-inset-sm)] relative">
             <img
-              src="/src/assets/images/networth_breakdown_ui_1790949140162.jpg"
+              src={APP_IMAGES.networthBreakdown}
               alt="TLDR Money Net Worth Interface"
               className="w-full h-auto object-cover"
               referrerPolicy="no-referrer"

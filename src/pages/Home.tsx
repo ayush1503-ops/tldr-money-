@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { WaitlistForm } from '../components/WaitlistForm';
 import HeroAppPreview from '../components/HeroAppPreview';
 import InteractiveFeatureDemo from '../components/InteractiveFeatureDemo';
+import PhoneMockupShowcase from '../components/PhoneMockupShowcase';
+import { APP_IMAGES } from '../assets/images';
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -188,6 +190,9 @@ const Home = () => {
           <div className="mt-16">
             <InteractiveFeatureDemo />
           </div>
+
+          {/* Mobbin Featured Public.com Style iPhone Experience */}
+          <PhoneMockupShowcase />
         </motion.section>
 
         {/* Deep Dive Sections */}
@@ -215,7 +220,7 @@ const Home = () => {
             <div className="p-4 rounded-[36px] bg-[var(--color-bg-base)] shadow-[var(--shadow-neo-base)] border border-white/40 group overflow-hidden">
               <div className="relative rounded-[28px] overflow-hidden shadow-[var(--shadow-neo-inset-sm)]">
                 <img
-                  src="/src/assets/images/expense_feed_ui_1790949127767.jpg"
+                  src={APP_IMAGES.expenseFeed}
                   alt="TLDR Money Daily Transaction Feed"
                   className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                   referrerPolicy="no-referrer"

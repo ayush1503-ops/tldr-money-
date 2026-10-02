@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Mail, Smartphone, Zap, RefreshCw } from 'lucide-react';
 import { WaitlistForm } from '../components/WaitlistForm';
+import { APP_IMAGES } from '../assets/images';
 
 export default function ExpenseTracker() {
   return (
@@ -36,7 +37,7 @@ export default function ExpenseTracker() {
         <div className="max-w-3xl mx-auto my-10 p-4 rounded-[40px] bg-[var(--color-bg-base)] shadow-[var(--shadow-neo-base)] border border-white/50">
           <div className="rounded-[30px] overflow-hidden shadow-[var(--shadow-neo-inset-sm)] relative">
             <img
-              src="/src/assets/images/expense_feed_ui_1790949127767.jpg"
+              src={APP_IMAGES.expenseFeed}
               alt="TLDR Money Expense Tracker Interface"
               className="w-full h-auto object-cover"
               referrerPolicy="no-referrer"

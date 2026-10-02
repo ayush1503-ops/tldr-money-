@@ -10,6 +10,7 @@ import {
   RefreshCw,
   Zap
 } from 'lucide-react';
+import { APP_IMAGES } from '../assets/images';
 
 interface ShowcaseProps {
   initialTab?: 'expenses' | 'networth' | 'fire';
@@ -217,7 +218,7 @@ export default function InteractiveFeatureShowcase({ initialTab = 'expenses' }: 
                 <div className="relative rounded-[32px] overflow-hidden shadow-[var(--shadow-neo-base)] p-3 bg-[var(--color-bg-base)] group">
                   <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-neo-inset-sm)]">
                     <img
-                      src="/src/assets/images/expense_feed_ui_1790949127767.jpg"
+                      src={APP_IMAGES.expenseFeed}
                       alt="TLDR Money Expense Tracker Interface Screenshot"
                       className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                       referrerPolicy="no-referrer"
@@ -230,7 +231,7 @@ export default function InteractiveFeatureShowcase({ initialTab = 'expenses' }: 
                     </div>
 
                     <button
-                      onClick={() => setShowScreenshotModal('/src/assets/images/expense_feed_ui_1790949127767.jpg')}
+                      onClick={() => setShowScreenshotModal(APP_IMAGES.expenseFeed)}
                       className="absolute bottom-4 right-4 bg-[var(--color-bg-base)]/90 backdrop-blur-md p-2.5 rounded-xl shadow-[var(--shadow-neo-sm)] text-[var(--color-fg-primary)] hover:text-[var(--color-accent)] transition-all cursor-pointer"
                       title="View full resolution"
                     >
@@ -321,7 +322,7 @@ export default function InteractiveFeatureShowcase({ initialTab = 'expenses' }: 
                 <div className="relative rounded-[32px] overflow-hidden shadow-[var(--shadow-neo-base)] p-3 bg-[var(--color-bg-base)] group">
                   <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-neo-inset-sm)]">
                     <img
-                      src="/src/assets/images/networth_breakdown_ui_1790949140162.jpg"
+                      src={APP_IMAGES.networthBreakdown}
                       alt="TLDR Money Net Worth Dashboard Screenshot"
                       className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                       referrerPolicy="no-referrer"
@@ -333,7 +334,7 @@ export default function InteractiveFeatureShowcase({ initialTab = 'expenses' }: 
                     </div>
 
                     <button
-                      onClick={() => setShowScreenshotModal('/src/assets/images/networth_breakdown_ui_1790949140162.jpg')}
+                      onClick={() => setShowScreenshotModal(APP_IMAGES.networthBreakdown)}
                       className="absolute bottom-4 right-4 bg-[var(--color-bg-base)]/90 backdrop-blur-md p-2.5 rounded-xl shadow-[var(--shadow-neo-sm)] text-[var(--color-fg-primary)] hover:text-[var(--color-accent)] transition-all cursor-pointer"
                       title="View full resolution"
                     >
@@ -442,7 +443,7 @@ export default function InteractiveFeatureShowcase({ initialTab = 'expenses' }: 
                 <div className="relative rounded-[32px] overflow-hidden shadow-[var(--shadow-neo-base)] p-3 bg-[var(--color-bg-base)] group">
                   <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-neo-inset-sm)]">
                     <img
-                      src="/src/assets/images/fire_calculator_ui_1790949151843.jpg"
+                      src={APP_IMAGES.fireCalculator}
                       alt="TLDR Money FIRE Calculator Screenshot"
                       className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                       referrerPolicy="no-referrer"
@@ -454,7 +455,7 @@ export default function InteractiveFeatureShowcase({ initialTab = 'expenses' }: 
                     </div>
 
                     <button
-                      onClick={() => setShowScreenshotModal('/src/assets/images/fire_calculator_ui_1790949151843.jpg')}
+                      onClick={() => setShowScreenshotModal(APP_IMAGES.fireCalculator)}
                       className="absolute bottom-4 right-4 bg-[var(--color-bg-base)]/90 backdrop-blur-md p-2.5 rounded-xl shadow-[var(--shadow-neo-sm)] text-[var(--color-fg-primary)] hover:text-[var(--color-accent)] transition-all cursor-pointer"
                       title="View full resolution"
                     >
