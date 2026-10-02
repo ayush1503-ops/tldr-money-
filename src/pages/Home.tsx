@@ -1,13 +1,14 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { ArrowRight, Check, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { WaitlistForm } from '../components/WaitlistForm';
 
-const fadeInUp = {
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
 };
 
-const staggerContainer = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -323,7 +324,8 @@ const Home = () => {
 
         {/* CTA Section */}
         <motion.section 
-          className="text-center py-24 rounded-[40px] shadow-[var(--shadow-neo-inset-deep)] relative overflow-hidden"
+          id="waitlist"
+          className="text-center py-20 px-4 md:px-8 rounded-[40px] shadow-[var(--shadow-neo-inset-deep)] relative overflow-hidden"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -332,19 +334,15 @@ const Home = () => {
           {/* Decorative ambient motion */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full shadow-[var(--shadow-neo-base)] opacity-30 animate-[float_5s_ease-in-out_infinite] pointer-events-none" />
           
-          <div className="relative z-10 px-8">
-            <motion.h2 className="text-4xl md:text-5xl font-display font-extrabold mb-8 tracking-tight" variants={fadeInUp}>Start understanding your money</motion.h2>
-            <motion.p className="text-xl text-[var(--color-fg-muted)] font-medium mb-12 max-w-2xl mx-auto shadow-[var(--shadow-neo-base)] p-6 rounded-[32px]" variants={fadeInUp}>
+          <div className="relative z-10 px-4 max-w-3xl mx-auto">
+            <motion.h2 className="text-4xl md:text-5xl font-display font-extrabold mb-6 tracking-tight" variants={fadeInUp}>
+              Start understanding your money
+            </motion.h2>
+            <motion.p className="text-lg md:text-xl text-[var(--color-fg-muted)] font-medium mb-10 mx-auto shadow-[var(--shadow-neo-base)] p-6 rounded-[32px] bg-[var(--color-bg-base)]" variants={fadeInUp}>
               Funded by subscription when it arrives — no ads, no referrals, no commissions. Nothing is charged today.
             </motion.p>
             <motion.div variants={fadeInUp}>
-              <Link 
-                to="#waitlist" 
-                className="inline-flex items-center px-12 py-6 bg-[var(--color-accent)] text-white rounded-3xl text-xl font-bold shadow-[var(--shadow-neo-base)] hover:shadow-[var(--shadow-neo-hover)] hover:-translate-y-1 hover:bg-[var(--color-accent-light)] transition-all duration-300 active:shadow-[var(--shadow-neo-inset)] active:translate-y-[1px] group focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)] focus:ring-offset-8 focus:ring-offset-[var(--color-bg-base)]"
-              >
-                Join the waitlist
-                <ArrowRight className="ml-4 w-6 h-6 group-hover:translate-x-2 transition-transform" />
-              </Link>
+              <WaitlistForm id="waitlist-card" />
             </motion.div>
           </div>
         </motion.section>

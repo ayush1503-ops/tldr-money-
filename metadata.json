@@ -1,0 +1,6 @@
+{
+  "name": "TLDR Money",
+  "description": "TLDR Money is an expense tracker for India with automatic transaction tracking, net worth valuation, and projected FIRE date.",
+  "permissions": [],
+  "capabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

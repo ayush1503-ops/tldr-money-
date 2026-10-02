@@ -2,25 +2,28 @@ import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
+const pseudoRandom = (seed: number) => {
+  const x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+};
+
+const initialParticles = Array.from({ length: 300 }, (_, i) => {
+  const t = pseudoRandom(i * 1.1 + 1) * 100;
+  const factor = 20 + pseudoRandom(i * 2.3 + 2) * 100;
+  const speed = 0.01 + pseudoRandom(i * 3.7 + 3) / 200;
+  const xFactor = -50 + pseudoRandom(i * 4.9 + 4) * 100;
+  const yFactor = -50 + pseudoRandom(i * 5.1 + 5) * 100;
+  const zFactor = -50 + pseudoRandom(i * 6.3 + 6) * 100;
+  return { t, factor, speed, xFactor, yFactor, zFactor, mx: 0, my: 0 };
+});
+
 const Particles = () => {
   const count = 300;
   const mesh = useRef<THREE.InstancedMesh>(null);
   
   const dummy = useMemo(() => new THREE.Object3D(), []);
   
-  const particles = useMemo(() => {
-    const temp = [];
-    for (let i = 0; i < count; i++) {
-      const t = Math.random() * 100;
-      const factor = 20 + Math.random() * 100;
-      const speed = 0.01 + Math.random() / 200;
-      const xFactor = -50 + Math.random() * 100;
-      const yFactor = -50 + Math.random() * 100;
-      const zFactor = -50 + Math.random() * 100;
-      temp.push({ t, factor, speed, xFactor, yFactor, zFactor, mx: 0, my: 0 });
-    }
-    return temp;
-  }, [count]);
+  const particles = useMemo(() => initialParticles.map((p) => ({ ...p })), []);
 
   useFrame(() => {
     if (!mesh.current) return;
