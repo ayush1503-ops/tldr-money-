@@ -31,6 +31,21 @@ export default function ExpenseTracker() {
         >
           TLDR Money reads your Gmail transaction alerts on your device, strips out all personal identifying info, and categorizes chai, Swiggy, rent, and investments automatically.
         </motion.p>
+
+        {/* Real App Screenshot Showcase */}
+        <div className="max-w-3xl mx-auto my-10 p-4 rounded-[40px] bg-[var(--color-bg-base)] shadow-[var(--shadow-neo-base)] border border-white/50">
+          <div className="rounded-[30px] overflow-hidden shadow-[var(--shadow-neo-inset-sm)] relative">
+            <img
+              src="/src/assets/images/expense_feed_ui_1790949127767.jpg"
+              alt="TLDR Money Expense Tracker Interface"
+              className="w-full h-auto object-cover"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute top-4 left-4 bg-[var(--color-bg-base)]/90 backdrop-blur-md px-3.5 py-1.5 rounded-xl shadow-[var(--shadow-neo-sm)] text-xs font-bold text-[var(--color-fg-primary)] border border-white/40">
+              Live Interface • On-Device Transaction Feed
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* 3 Step Interactive Card Flow */}

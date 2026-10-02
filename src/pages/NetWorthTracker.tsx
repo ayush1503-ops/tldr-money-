@@ -38,6 +38,21 @@ export default function NetWorthTracker() {
         >
           No inflated real estate guesses, no hidden loan omissions. See liquid assets vs illiquid capital, real debt liabilities, and clean monthly progress.
         </motion.p>
+
+        {/* Real App Screenshot Showcase */}
+        <div className="max-w-3xl mx-auto my-10 p-4 rounded-[40px] bg-[var(--color-bg-base)] shadow-[var(--shadow-neo-base)] border border-white/50">
+          <div className="rounded-[30px] overflow-hidden shadow-[var(--shadow-neo-inset-sm)] relative">
+            <img
+              src="/src/assets/images/networth_breakdown_ui_1790949140162.jpg"
+              alt="TLDR Money Net Worth Interface"
+              className="w-full h-auto object-cover"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute top-4 left-4 bg-[var(--color-bg-base)]/90 backdrop-blur-md px-3.5 py-1.5 rounded-xl shadow-[var(--shadow-neo-sm)] text-xs font-bold text-[var(--color-fg-primary)] border border-white/40">
+              Live Interface • Indian Multi-Asset Consolidated Net Worth
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Asset Grid */}

@@ -257,6 +257,21 @@ export default function FireCalculator() {
               <span className="text-[10px] text-[var(--color-fg-muted)]">40x luxury</span>
             </div>
           </div>
+
+          {/* App Screenshot Visual Proof */}
+          <div className="p-4 rounded-[36px] bg-[var(--color-bg-base)] shadow-[var(--shadow-neo-base)] border border-white/50">
+            <div className="rounded-[28px] overflow-hidden shadow-[var(--shadow-neo-inset-sm)] relative">
+              <img
+                src="/src/assets/images/fire_calculator_ui_1790949151843.jpg"
+                alt="TLDR Money FIRE Freedom Calculator Interface"
+                className="w-full h-auto object-cover"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute top-4 left-4 bg-[var(--color-bg-base)]/90 backdrop-blur-md px-3.5 py-1.5 rounded-xl shadow-[var(--shadow-neo-sm)] text-xs font-bold text-[var(--color-fg-primary)] border border-white/40">
+                Live Interface • Milestone Gauges
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

@@ -2,6 +2,8 @@ import { motion, type Variants } from 'framer-motion';
 import { ArrowRight, Check, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { WaitlistForm } from '../components/WaitlistForm';
+import HeroAppPreview from '../components/HeroAppPreview';
+import InteractiveFeatureDemo from '../components/InteractiveFeatureDemo';
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -52,13 +54,23 @@ const Home = () => {
           <motion.div variants={fadeInUp}>
             <Link 
               to="#waitlist" 
-              className="inline-flex items-center px-10 py-5 bg-[var(--color-accent)] text-white rounded-2xl text-lg font-bold shadow-[var(--shadow-neo-base)] hover:shadow-[var(--shadow-neo-hover)] hover:-translate-y-1 hover:bg-[var(--color-accent-light)] transition-all duration-300 active:shadow-[var(--shadow-neo-inset)] active:translate-y-[0.5px] group focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-4 focus:ring-offset-[var(--color-bg-base)]"
+              className="inline-flex items-center px-10 py-5 bg-[var(--color-accent)] text-white rounded-2xl text-lg font-bold shadow-[var(--shadow-neo-base)] hover:shadow-[var(--shadow-neo-hover)] hover:-translate-y-1 hover:bg-[var(--color-accent-light)] transition-all duration-300 active:shadow-[var(--shadow-neo-inset)] active:translate-y-[0.5px] group focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-4 focus:ring-offset-[var(--color-bg-base)] cursor-pointer"
             >
               Join the waitlist
               <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
         </motion.section>
+
+        {/* Hero App Interface Preview with Animations */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-24"
+        >
+          <HeroAppPreview />
+        </motion.div>
 
         {/* Philosophy Section */}
         <motion.section 
@@ -171,6 +183,11 @@ const Home = () => {
               </Link>
             </motion.div>
           </div>
+
+          {/* Interactive Feature Animation & Live Visual Proofs */}
+          <div className="mt-16">
+            <InteractiveFeatureDemo />
+          </div>
         </motion.section>
 
         {/* Deep Dive Sections */}
@@ -195,38 +212,46 @@ const Home = () => {
               </ul>
             </div>
             
-            <div className="bg-[var(--color-bg-base)] p-8 rounded-[32px] shadow-[var(--shadow-neo-inset-deep)] h-96 flex flex-col gap-6 relative overflow-hidden group">
-               {/* Abstract List UI */}
-               <div className="w-full shadow-[var(--shadow-neo-base)] h-14 rounded-2xl bg-[var(--color-bg-base)] flex items-center px-6 transition-transform group-hover:scale-[1.02] duration-300"><div className="w-1/3 h-3 shadow-[var(--shadow-neo-inset-sm)] rounded-full" /></div>
-               
-               <div className="flex justify-between items-center p-4 shadow-[var(--shadow-neo-base)] bg-[var(--color-bg-base)] rounded-2xl transition-transform group-hover:scale-[1.02] duration-300 delay-75">
-                 <div className="flex items-center"><div className="w-12 h-12 rounded-full shadow-[var(--shadow-neo-inset)] mr-4 flex items-center justify-center text-xs font-bold text-[#E0E5EC] bg-[#F87171] shadow-inner" /> <div className="w-32 h-3 shadow-[var(--shadow-neo-inset-sm)] rounded-full" /></div>
-                 <div className="w-20 h-3 shadow-[var(--shadow-neo-inset-sm)] rounded-full bg-[#F87171]/20" />
-               </div>
-               
-               <div className="flex justify-between items-center p-4 shadow-[var(--shadow-neo-base)] bg-[var(--color-bg-base)] rounded-2xl transition-transform group-hover:scale-[1.02] duration-300 delay-150">
-                 <div className="flex items-center"><div className="w-12 h-12 rounded-full shadow-[var(--shadow-neo-inset)] mr-4 flex items-center justify-center text-xs font-bold text-[#E0E5EC] bg-[#34D399] shadow-inner" /> <div className="w-24 h-3 shadow-[var(--shadow-neo-inset-sm)] rounded-full" /></div>
-                 <div className="w-24 h-3 shadow-[var(--shadow-neo-inset-sm)] rounded-full bg-[#34D399]/20" />
-               </div>
-               
-               <div className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full shadow-[var(--shadow-neo-base)] opacity-50 pointer-events-none" />
+            <div className="p-4 rounded-[36px] bg-[var(--color-bg-base)] shadow-[var(--shadow-neo-base)] border border-white/40 group overflow-hidden">
+              <div className="relative rounded-[28px] overflow-hidden shadow-[var(--shadow-neo-inset-sm)]">
+                <img
+                  src="/src/assets/images/expense_feed_ui_1790949127767.jpg"
+                  alt="TLDR Money Daily Transaction Feed"
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute bottom-3 left-3 bg-[var(--color-bg-base)]/90 backdrop-blur-md px-3 py-1 rounded-xl text-xs font-bold shadow-[var(--shadow-neo-sm)] border border-white/30 text-[var(--color-accent)]">
+                  Live Feed UI
+                </div>
+              </div>
             </div>
           </motion.div>
 
           {/* Section 2 */}
           <motion.div className="grid md:grid-cols-2 gap-16 items-center" variants={fadeInUp}>
-            <div className="order-2 md:order-1 bg-[var(--color-bg-base)] p-10 rounded-[32px] shadow-[var(--shadow-neo-inset-deep)] h-96 flex flex-col justify-center items-center group relative">
-               <div className="absolute top-10 left-10 w-20 h-20 rounded-full shadow-[var(--shadow-neo-base)] animate-[float_4s_ease-in-out_infinite]" />
-               <div className="w-full max-w-sm space-y-6 relative z-10">
-                 <div className="p-6 rounded-2xl shadow-[var(--shadow-neo-base)] bg-[var(--color-bg-base)] group-hover:shadow-[var(--shadow-neo-hover)] transition-shadow">
-                   <div className="text-sm text-[var(--color-fg-muted)] mb-2 font-bold uppercase tracking-wider">Amount</div>
-                   <div className="text-2xl font-bold font-display shadow-[var(--shadow-neo-inset)] rounded-xl px-4 py-2 inline-block">₹ 1,200</div>
-                 </div>
-                 <div className="p-6 rounded-2xl shadow-[var(--shadow-neo-base)] bg-[var(--color-bg-base)] group-hover:shadow-[var(--shadow-neo-hover)] transition-shadow delay-75">
-                   <div className="text-sm text-[var(--color-fg-muted)] mb-2 font-bold uppercase tracking-wider">Merchant</div>
-                   <div className="text-xl font-medium shadow-[var(--shadow-neo-inset)] rounded-xl px-4 py-2 inline-block">Uber India</div>
-                 </div>
-               </div>
+            <div className="order-2 md:order-1 bg-[var(--color-bg-base)] p-8 md:p-10 rounded-[36px] shadow-[var(--shadow-neo-base)] border border-white/40">
+              <span className="text-xs uppercase font-extrabold tracking-wider text-[var(--color-fg-muted)] block mb-4">
+                Interactive Quick-Entry Preview
+              </span>
+              <div className="space-y-4">
+                <div className="p-6 rounded-2xl shadow-[var(--shadow-neo-inset-deep)] bg-[var(--color-bg-base)]">
+                  <span className="text-xs text-[var(--color-fg-muted)] font-bold block mb-1">Simulated Amount</span>
+                  <div className="text-3xl font-bold font-display text-[var(--color-accent)]">₹ 1,200</div>
+                </div>
+                <div className="p-5 rounded-2xl shadow-[var(--shadow-neo-base)] bg-[var(--color-bg-base)] flex justify-between items-center">
+                  <div>
+                    <span className="text-xs text-[var(--color-fg-muted)] block">Merchant</span>
+                    <strong className="text-base font-bold">Uber India</strong>
+                  </div>
+                  <span className="px-3 py-1 rounded-full shadow-[var(--shadow-neo-inset-sm)] text-xs font-bold text-emerald-700">
+                    Commute
+                  </span>
+                </div>
+                <div className="p-4 rounded-2xl shadow-[var(--shadow-neo-sm)] bg-[var(--color-bg-base)] text-xs text-[var(--color-fg-muted)] flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span>Auto-categorized without manual tagging</span>
+                </div>
+              </div>
             </div>
             
             <div className="order-1 md:order-2 pl-8">
