@@ -22,7 +22,7 @@ const Particles = () => {
     return temp;
   }, [count]);
 
-  useFrame((state) => {
+  useFrame(() => {
     if (!mesh.current) return;
     
     particles.forEach((particle, i) => {

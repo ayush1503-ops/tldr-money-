@@ -34,7 +34,7 @@ const Header = () => {
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         <Link to="/" className="text-2xl font-bold font-['Fraunces'] tracking-tight group">
