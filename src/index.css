@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --font-fraunces: 'Fraunces', serif;
+  --font-hanken: 'Hanken Grotesk', sans-serif;
+  --font-times: 'Times New Roman', serif;
+
+  --color-bg-primary: #F3EEE4;
+  --color-bg-secondary: #FBF8F2;
+  --color-bg-white: #FFFFFF;
+  
+  --color-text-primary: #201E1A;
+  --color-text-secondary: #524D44;
+  --color-text-tertiary: #726B5B;
+  
+  --color-accent: #C65D3C;
+  --color-secondary-1: #8FAAA4;
+  --color-secondary-2: #C4D5D0;
+  
+  --color-border-main: #E1DACB;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-hanken);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-fraunces);
+  }
+}
