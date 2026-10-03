@@ -3,8 +3,7 @@ import { ArrowRight, Check, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { WaitlistForm } from '../components/WaitlistForm';
 import HeroAppPreview from '../components/HeroAppPreview';
-import InteractiveFeatureDemo from '../components/InteractiveFeatureDemo';
-import PhoneMockupShowcase from '../components/PhoneMockupShowcase';
+import FloatingPhoneFrame from '../components/FloatingPhoneFrame';
 import { APP_IMAGES } from '../assets/images';
 
 const fadeInUp: Variants = {
@@ -36,7 +35,7 @@ const Home = () => {
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         {/* Hero Section */}
         <motion.section 
-          className="max-w-4xl mb-32 pt-10"
+          className="max-w-4xl mb-24 pt-10"
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
@@ -64,7 +63,7 @@ const Home = () => {
           </motion.div>
         </motion.section>
 
-        {/* Hero App Interface Preview with Animations */}
+        {/* Hero App Interface Preview with Floating iPhone Chassis & Live Hotspots */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -121,9 +120,9 @@ const Home = () => {
           </motion.div>
         </motion.section>
 
-        {/* Features Grid */}
+        {/* Features Grid: Three Numbers that Actually Run Your Money */}
         <motion.section 
-          className="mb-32"
+          className="mb-24"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -185,14 +184,6 @@ const Home = () => {
               </Link>
             </motion.div>
           </div>
-
-          {/* Interactive Feature Animation & Live Visual Proofs */}
-          <div className="mt-16">
-            <InteractiveFeatureDemo />
-          </div>
-
-          {/* Mobbin Featured Public.com Style iPhone Experience */}
-          <PhoneMockupShowcase />
         </motion.section>
 
         {/* Deep Dive Sections */}
@@ -202,7 +193,7 @@ const Home = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {/* Section 1 */}
+          {/* Section 1: Every Rupee In One List */}
           <motion.div className="grid md:grid-cols-2 gap-16 items-center" variants={fadeInUp}>
             <div className="pr-8">
               <div className="inline-block px-4 py-2 rounded-2xl shadow-[var(--shadow-neo-inset-sm)] text-[var(--color-accent)] font-bold tracking-widest uppercase text-xs mb-6">Activity</div>
@@ -217,22 +208,20 @@ const Home = () => {
               </ul>
             </div>
             
-            <div className="p-4 rounded-[36px] bg-[var(--color-bg-base)] shadow-[var(--shadow-neo-base)] border border-white/40 group overflow-hidden">
-              <div className="relative rounded-[28px] overflow-hidden shadow-[var(--shadow-neo-inset-sm)]">
-                <img
-                  src={APP_IMAGES.expenseFeed}
-                  alt="TLDR Money Daily Transaction Feed"
-                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute bottom-3 left-3 bg-[var(--color-bg-base)]/90 backdrop-blur-md px-3 py-1 rounded-xl text-xs font-bold shadow-[var(--shadow-neo-sm)] border border-white/30 text-[var(--color-accent)]">
-                  Live Feed UI
-                </div>
-              </div>
+            {/* Floating Phone with Daily Ledger Screenshot */}
+            <div className="flex justify-center">
+              <FloatingPhoneFrame
+                imageSrc={APP_IMAGES.expenseFeed}
+                alt="TLDR Money Daily Transaction Feed"
+                tagText="Daily Grouped Ledger"
+                badgeText="Auto-Categorized"
+                dynamicIslandText="HDFC Alert · Swiggy UPI"
+                width={340}
+              />
             </div>
           </motion.div>
 
-          {/* Section 2 */}
+          {/* Section 2: Cash Entry */}
           <motion.div className="grid md:grid-cols-2 gap-16 items-center" variants={fadeInUp}>
             <div className="order-2 md:order-1 bg-[var(--color-bg-base)] p-8 md:p-10 rounded-[36px] shadow-[var(--shadow-neo-base)] border border-white/40">
               <span className="text-xs uppercase font-extrabold tracking-wider text-[var(--color-fg-muted)] block mb-4">

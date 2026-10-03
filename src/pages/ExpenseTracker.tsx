@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Mail, Smartphone, Zap, RefreshCw } from 'lucide-react';
 import { WaitlistForm } from '../components/WaitlistForm';
 import { APP_IMAGES } from '../assets/images';
+import FloatingPhoneFrame from '../components/FloatingPhoneFrame';
 
 export default function ExpenseTracker() {
   return (
@@ -33,20 +34,15 @@ export default function ExpenseTracker() {
           TLDR Money reads your Gmail transaction alerts on your device, strips out all personal identifying info, and categorizes chai, Swiggy, rent, and investments automatically.
         </motion.p>
 
-        {/* Real App Screenshot Showcase */}
-        <div className="max-w-3xl mx-auto my-10 p-4 rounded-[40px] bg-[var(--color-bg-base)] shadow-[var(--shadow-neo-base)] border border-white/50">
-          <div className="rounded-[30px] overflow-hidden shadow-[var(--shadow-neo-inset-sm)] relative">
-            <img
-              src={APP_IMAGES.expenseFeed}
-              alt="TLDR Money Expense Tracker Interface"
-              className="w-full h-auto object-cover"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute top-4 left-4 bg-[var(--color-bg-base)]/90 backdrop-blur-md px-3.5 py-1.5 rounded-xl shadow-[var(--shadow-neo-sm)] text-xs font-bold text-[var(--color-fg-primary)] border border-white/40">
-              Live Interface • On-Device Transaction Feed
-            </div>
-          </div>
-        </div>
+        {/* Floating iPhone Showcase */}
+        <FloatingPhoneFrame
+          imageSrc={APP_IMAGES.expenseFeed}
+          alt="TLDR Money Daily Transaction Feed"
+          tagText="Daily Grouped Ledger"
+          badgeText="90-Day Backfill"
+          dynamicIslandText="HDFC Alert · -₹480 Swiggy"
+          width={350}
+        />
       </div>
 
       {/* 3 Step Interactive Card Flow */}

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { PieChart, TrendingUp, Landmark, ShieldCheck, ArrowUpRight, DollarSign } from 'lucide-react';
 import { WaitlistForm } from '../components/WaitlistForm';
 import { APP_IMAGES } from '../assets/images';
+import FloatingPhoneFrame from '../components/FloatingPhoneFrame';
 
 export default function NetWorthTracker() {
   const assets = [
@@ -40,20 +41,15 @@ export default function NetWorthTracker() {
           No inflated real estate guesses, no hidden loan omissions. See liquid assets vs illiquid capital, real debt liabilities, and clean monthly progress.
         </motion.p>
 
-        {/* Real App Screenshot Showcase */}
-        <div className="max-w-3xl mx-auto my-10 p-4 rounded-[40px] bg-[var(--color-bg-base)] shadow-[var(--shadow-neo-base)] border border-white/50">
-          <div className="rounded-[30px] overflow-hidden shadow-[var(--shadow-neo-inset-sm)] relative">
-            <img
-              src={APP_IMAGES.networthBreakdown}
-              alt="TLDR Money Net Worth Interface"
-              className="w-full h-auto object-cover"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute top-4 left-4 bg-[var(--color-bg-base)]/90 backdrop-blur-md px-3.5 py-1.5 rounded-xl shadow-[var(--shadow-neo-sm)] text-xs font-bold text-[var(--color-fg-primary)] border border-white/40">
-              Live Interface • Indian Multi-Asset Consolidated Net Worth
-            </div>
-          </div>
-        </div>
+        {/* Floating iPhone Showcase */}
+        <FloatingPhoneFrame
+          imageSrc={APP_IMAGES.networthBreakdown}
+          alt="TLDR Money Net Worth Interface"
+          tagText="All Assets Consolidated"
+          badgeText="+14.2% True IRR"
+          dynamicIslandText="CAMS & Demat Live Sync"
+          width={350}
+        />
       </div>
 
       {/* Asset Grid */}

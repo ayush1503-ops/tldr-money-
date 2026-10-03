@@ -11,7 +11,10 @@
   
   --color-accent: #E35234;
   --color-accent-light: #F06A4F;
-  --color-success: #10B981;
+  --color-accent-blue: #0D5CBF;
+  --color-accent-blue-vivid: #1976D2;
+  --color-success: #15A260;
+  --color-warning: #F0A529;
 
   /* Neumorphic Shadows for Beige (#F3EEE4) */
   --shadow-neo-base: 9px 9px 16px rgba(209, 201, 187, 0.7), -9px -9px 16px rgba(255, 255, 255, 0.8);
@@ -21,6 +24,12 @@
   --shadow-neo-inset: inset 6px 6px 10px rgba(209, 201, 187, 0.7), inset -6px -6px 10px rgba(255, 255, 255, 0.8);
   --shadow-neo-inset-deep: inset 10px 10px 20px rgba(209, 201, 187, 0.8), inset -10px -10px 20px rgba(255, 255, 255, 0.9);
   --shadow-neo-inset-sm: inset 3px 3px 6px rgba(209, 201, 187, 0.6), inset -3px -3px 6px rgba(255, 255, 255, 0.7);
+
+  /* Fast Budget Floating Shadows */
+  --shadow-fb-sm: 0px 6px 24px 0px rgba(7, 57, 116, 0.18);
+  --shadow-fb-md: 0px 12px 30px 0px rgba(224, 142, 18, 0.22);
+  --shadow-fb-lg: 0px 16px 34px 0px rgba(7, 57, 116, 0.25);
+  --shadow-phone-float: 0 30px 60px -15px rgba(28, 25, 23, 0.35), 0 16px 32px -8px rgba(7, 57, 116, 0.25);
 }
 
 @layer base {
@@ -42,10 +51,48 @@
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
   }
+
+  @keyframes v2_float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-14px) rotate(1deg); }
+  }
+
+  @keyframes v2_float_soft {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+
+  @keyframes v2_float_reverse {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(12px) rotate(-1deg); }
+  }
+
+  @keyframes v2_blob {
+    0%, 100% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(25px, -18px) scale(1.04); }
+    66% { transform: translate(-18px, 15px) scale(0.96); }
+  }
 }
 
 @layer utilities {
   .font-display {
     font-family: var(--font-display);
   }
+
+  .animate-float-soft {
+    animation: v2_float_soft 6s ease-in-out infinite;
+  }
+
+  .animate-float-main {
+    animation: v2_float 7s ease-in-out infinite;
+  }
+
+  .animate-float-reverse {
+    animation: v2_float_reverse 6s ease-in-out infinite;
+  }
+
+  .animate-blob-slow {
+    animation: v2_blob 18s ease-in-out infinite;
+  }
 }
+

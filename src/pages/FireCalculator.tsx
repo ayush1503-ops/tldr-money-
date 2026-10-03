@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Flame, Calculator } from 'lucide-react';
 import { WaitlistForm } from '../components/WaitlistForm';
 import { APP_IMAGES } from '../assets/images';
+import FloatingPhoneFrame from '../components/FloatingPhoneFrame';
 
 const currentYear = new Date().getFullYear();
 
@@ -259,20 +260,15 @@ export default function FireCalculator() {
             </div>
           </div>
 
-          {/* App Screenshot Visual Proof */}
-          <div className="p-4 rounded-[36px] bg-[var(--color-bg-base)] shadow-[var(--shadow-neo-base)] border border-white/50">
-            <div className="rounded-[28px] overflow-hidden shadow-[var(--shadow-neo-inset-sm)] relative">
-              <img
-                src={APP_IMAGES.fireCalculator}
-                alt="TLDR Money FIRE Freedom Calculator Interface"
-                className="w-full h-auto object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute top-4 left-4 bg-[var(--color-bg-base)]/90 backdrop-blur-md px-3.5 py-1.5 rounded-xl shadow-[var(--shadow-neo-sm)] text-xs font-bold text-[var(--color-fg-primary)] border border-white/40">
-                Live Interface • Milestone Gauges
-              </div>
-            </div>
-          </div>
+          {/* App Screenshot Visual Proof with Floating Phone */}
+          <FloatingPhoneFrame
+            imageSrc={APP_IMAGES.fireCalculator}
+            alt="TLDR Money FIRE Freedom Calculator Interface"
+            tagText="Milestone Gauges"
+            badgeText="30x Multiplier"
+            dynamicIslandText="FIRE Target: 2034"
+            width={340}
+          />
         </div>
       </div>
 

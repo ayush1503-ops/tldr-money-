@@ -4,6 +4,8 @@ import expenseFeedUi from './images/expense_feed_ui_1790949127767.jpg';
 import networthBreakdownUi from './images/networth_breakdown_ui_1790949140162.jpg';
 import fireCalculatorUi from './images/fire_calculator_ui_1790949151843.jpg';
 import publicIosPhoneUi from './images/public_ios_phone_ui_1790950513904.jpg';
+import privacyVaultPhoneUi from './images/privacy_vault_phone_ui_1791006214644.jpg';
+import brokerSyncPhoneUi from './images/broker_sync_phone_ui_1791006232209.jpg';
 
 export const APP_IMAGES = {
   heroDashboard: heroDashboardUi,
@@ -11,6 +13,8 @@ export const APP_IMAGES = {
   networthBreakdown: networthBreakdownUi,
   fireCalculator: fireCalculatorUi,
   publicIosPhone: publicIosPhoneUi,
+  privacyVault: privacyVaultPhoneUi,
+  brokerSync: brokerSyncPhoneUi,
 };
 
 export default APP_IMAGES;
